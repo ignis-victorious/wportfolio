@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 //  import FILES
 import 'home_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // PARTS
 // PROVIDERS
 // -------------
@@ -21,14 +22,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter web - portfolio exercise',
       localizationsDelegates: [
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-  ],
-  supportedLocales: [
-    Locale('en'), // English
-    Locale('it'), // Italian
-  ],
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('it'), // Italian
+      ],
+      locale: Locale('it'),
 
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

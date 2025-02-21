@@ -1,0 +1,19 @@
+{
+    "home":"Home",
+    "@home": {
+        "description": "First choiche in the menu in NavBar"
+    },
+    "courses":"Courses",
+    "@courses": {
+        "description": "First choiche in the menu in NavBar"
+    },
+    "blog":"Blog",
+    "@blog": {
+        "description": "First choiche in the menu in NavBar"
+    },
+    "about":"About",
+    "@about": {
+        "description": "First choiche in the menu in NavBar"
+    }
+    
+}

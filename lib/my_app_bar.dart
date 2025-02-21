@@ -1,9 +1,10 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:wportfolio/extensions.dart';
 //  import FILES
-import 'app_text_styles.dart';
+import 'package:wportfolio/extensions.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 // PARTS
 // PROVIDERS
 // -------------
@@ -51,10 +52,15 @@ class AppMenus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        const Text('Home'),
-        const Text('Courses'),
-        const Text('Blog'),
-        const Text('About'),
+        Text(context.texts.home),
+        Text(context.texts.courses),
+        Text(context.texts.blog),
+        Text(context.texts.about),
+        // Text(AppLocalizations.of(context)!.home),
+        // Text(AppLocalizations.of(context)!.courses),
+        // Text(AppLocalizations.of(context)!.blog),
+        // Text(AppLocalizations.of(context)!.about),
+       
       ],
     );
   }

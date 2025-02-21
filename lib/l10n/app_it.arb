@@ -1,0 +1,18 @@
+{
+    "home":"Casa",
+    "@home": {
+        "description": "Prima scelta del menu in NavBar"
+    },
+    "courses":"Corsi",
+    "@courses": {
+        "description": "First choiche in the menu in NavBar"
+    },
+    "blog":"Bloggi",
+    "@blog": {
+        "description": "First choiche in the menu in NavBar"
+    },
+    "about":"Riguardo",
+    "@about": {
+        "description": "First choiche in the menu in NavBar"
+    }
+}

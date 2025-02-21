@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 //  import FILES
 import 'app_text_styles.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 // PARTS
 // PROVIDERS
 // -------------
@@ -38,4 +40,5 @@ extension StyledContext on BuildContext {
         return LargeTextStyles();
     }
   }
+  AppLocalizations get texts => AppLocalizations.of(this)??lookupAppLocalizations(Locale('en')) ;
 }
