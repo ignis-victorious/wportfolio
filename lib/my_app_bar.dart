@@ -14,16 +14,22 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        AppLogo(),
-        Spacer(),
-        AppMenus(),
-        Spacer(),
-        LanguageToggle(),
-        // Spacer(),
-        ThemeToggle(),
-      ],
+    return Container(
+      color: Colors.red,
+      height: context.insets.appBarHeight,
+      // color: Theme.of(context).appBarTheme.backgroundColor,
+      padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
+      child: Row(
+        children: <Widget>[
+          AppLogo(),
+          Spacer(),
+          AppMenus(),
+          Spacer(),
+          LanguageToggle(),
+          // Spacer(),
+          ThemeToggle(),
+        ],
+      ),
     );
   }
 }
@@ -38,10 +44,10 @@ class AppLogo extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     debugPrint(width.toString());
     return Text(
-      'Portfolio',  // ''The Cecca!',
-      style: context.textStyle.titleLgBold ,
+      'Portfolio', // ''The Cecca!',
+      style: context.textStyle.titleLgBold,
       // style: width > 600 ? LargeTextStyles().titleLgBold : SmallTextStyles().titleLgBold,
-      );
+    );
   }
 }
 
@@ -50,21 +56,18 @@ class AppMenus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Theme.of(context).appBarTheme.backgroundColor,
-      child: Row(
-        children: <Widget>[
-          Text(context.texts.home),
-          Text(context.texts.courses),
-          Text(context.texts.blog),
-          Text(context.texts.about),
-          // Text(AppLocalizations.of(context)!.home),
-          // Text(AppLocalizations.of(context)!.courses),
-          // Text(AppLocalizations.of(context)!.blog),
-          // Text(AppLocalizations.of(context)!.about),
-         
-        ],
-      ),
+    return Row(
+      children: <Widget>[
+        Text(context.texts.home),
+        Text(context.texts.courses),
+        Text(context.texts.blog),
+        Text(context.texts.about),
+    
+        // Text(AppLocalizations.of(context)!.home),
+        // Text(AppLocalizations.of(context)!.courses),
+        // Text(AppLocalizations.of(context)!.blog),
+        // Text(AppLocalizations.of(context)!.about),
+      ],
     );
   }
 }
@@ -90,9 +93,6 @@ class ThemeToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Switch(
-      value: false,
-      onChanged: (value) {},
-    );
+    return Switch(value: false, onChanged: (value) {});
   }
 }

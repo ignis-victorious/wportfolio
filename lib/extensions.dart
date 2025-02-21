@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //  import FILES
 import 'app_text_styles.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'style/app_size.dart';
 
 // PARTS
 // PROVIDERS
@@ -40,5 +41,15 @@ extension StyledContext on BuildContext {
         return LargeTextStyles();
     }
   }
+
+  AppInsets get insets {
+  switch (formFactor) {
+    case FormFactorType.mobile:
+      return SmallInsets();
+    case FormFactorType.tablet:
+    case FormFactorType.desktop:
+      return LargeInsets();
+  }
+}
   AppLocalizations get texts => AppLocalizations.of(this)??lookupAppLocalizations(Locale('en')) ;
 }
