@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wportfolio/style/app_theme.dart';
 //  import FILES
 import 'home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -27,14 +28,16 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.dark,
       supportedLocales: [
         Locale('en'), // English
         Locale('it'), // Italian
       ],
-      locale: Locale('it'),
+      // locale: Locale('it'),
 
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
       ),
       home: const HomePage(),
     );
