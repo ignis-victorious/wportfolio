@@ -18,6 +18,7 @@ extension StyledContext on BuildContext {
   double get width => mq.size.width;
   double get height => mq.size.height;
 
+  ThemeData get theme => Theme.of(this); 
   FormFactorType get formFactor {
     if (width < 600) {
       return FormFactorType.mobile;
