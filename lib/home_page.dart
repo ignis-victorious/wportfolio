@@ -2,7 +2,7 @@
 //  import LIBRARIES
 import 'package:flutter/material.dart';
 //  import FILES
-import 'my_app_bar.dart';
+import 'widgets/appbar/my_app_bar.dart';
 // PARTS
 // PROVIDERS
 // -------------
