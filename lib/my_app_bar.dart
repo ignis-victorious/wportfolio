@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 //  import FILES
 import 'package:wportfolio/extensions.dart';
+import 'style/app_size.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // PARTS
@@ -15,20 +16,24 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       color: Colors.red,
       height: context.insets.appBarHeight,
       // color: Theme.of(context).appBarTheme.backgroundColor,
       padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
-      child: Row(
-        children: <Widget>[
-          AppLogo(),
-          Spacer(),
-          AppMenus(),
-          Spacer(),
-          LanguageToggle(),
-          // Spacer(),
-          ThemeToggle(),
-        ],
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth:  Insets.maxWidth ),
+        child: Row(
+          children: <Widget>[
+            AppLogo(),
+            Spacer(),
+            AppMenus(),
+            Spacer(),
+            LanguageToggle(),
+            // Spacer(),
+            ThemeToggle(),
+          ],
+        ),
       ),
     );
   }

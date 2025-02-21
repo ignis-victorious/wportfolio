@@ -11,6 +11,10 @@ abstract class AppInsets {
   double get appBarHeight;
 }
 
+class Insets {
+  static const double maxWidth = 1280;
+}
+
 class LargeInsets extends AppInsets {
   @override
   double get padding => 80;
