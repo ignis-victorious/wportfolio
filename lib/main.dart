@@ -1,13 +1,15 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wportfolio/providers.dart';
-import 'package:wportfolio/style/app_theme.dart';
-//  import FILES
-import 'home_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+//  import FILES
+// import 'package:wportfolio/providers.dart';
+// import 'package:wportfolio/style/app_theme.dart';
+import 'home_page.dart';
+import 'style/app_theme.dart';
+import './app_locale_controller.dart';
 // PARTS
 // PROVIDERS
 // -------------
@@ -21,7 +23,7 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<String> locale = ref.watch(appLocaleProvider);
+    final AsyncValue<String> locale = ref.watch(appLocaleControllerProvider);
     return MaterialApp(
       title: 'Flutter web - portfolio exercise',
       localizationsDelegates: [
