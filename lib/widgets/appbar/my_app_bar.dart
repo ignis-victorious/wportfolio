@@ -1,13 +1,15 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wportfolio/shared/app_theme_controller.dart';
 //  import FILES
-import 'package:wportfolio/extensions.dart';
-import '../../app_text_styles.dart';
 import '../../constants/app_menu_list.dart';
+import '../../app_text_styles.dart';
 import '../../style/app_size.dart';
 import '../language_switch.dart';
 import 'app_bar_drawer_icon.dart';
+import '../../extensions.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // PARTS
@@ -135,11 +137,19 @@ class LargeAppBarMenuItem extends StatelessWidget {
 //   }
 // }
 
-class ThemeToggle extends StatelessWidget {
+class ThemeToggle extends ConsumerWidget {
   const ThemeToggle({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Switch(value: false, onChanged: (value) {});
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(appThemeControllerProvider);
+    return Switch(
+      value: state.value == ThemeMode.dark,
+      onChanged: (value) {
+        ref
+            .read(appThemeControllerProvider.notifier)
+            .changeTheme(value ? ThemeMode.dark : ThemeMode.light);
+      },
+    );
   }
 }

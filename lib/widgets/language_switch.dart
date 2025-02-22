@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 //  import FILE
-import '../app_locale_controller.dart';
+import '../shared/app_locale_controller.dart';
 import '../constants/app_icon.dart';
 import '../extensions.dart';
 // import '../providers.dart';

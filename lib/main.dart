@@ -9,7 +9,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 // import 'package:wportfolio/style/app_theme.dart';
 import 'home_page.dart';
 import 'style/app_theme.dart';
-import './app_locale_controller.dart';
+import 'shared/app_theme_controller.dart';
+import 'shared/app_locale_controller.dart';
 // PARTS
 // PROVIDERS
 // -------------
@@ -24,6 +25,8 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<String> locale = ref.watch(appLocaleControllerProvider);
+    final theme = ref.watch(appThemeControllerProvider);
+
     return MaterialApp(
       title: 'Flutter web - portfolio exercise',
       localizationsDelegates: [
@@ -32,20 +35,26 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.dark,
+      darkTheme: AppTheme(fontFamily: _fontFamily(locale.value)).dark,
+      theme: AppTheme(fontFamily: _fontFamily(locale.value)).light,
+
+      // darkTheme: AppTheme.dark,
+      themeMode: theme.value,
+      // themeMode: ThemeMode.dark,
       supportedLocales: [
         Locale('en'), // English
         Locale('it'), // Italian
       ],
       locale: Locale(locale.value ?? 'en'),
+      home: const HomePage(),
 
       // locale: const Locale('en'),
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-      ),
-      home: const HomePage(),
+      // theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),),
     );
+  }
+
+  String _fontFamily(String? locale) {
+    return (locale ?? 'en') == 'en' ? 'Poppins' : 'Raleway';
   }
 }
 
