@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:wportfolio/providers.dart';
 import 'package:wportfolio/style/app_theme.dart';
 //  import FILES
 import 'home_page.dart';
@@ -15,11 +16,12 @@ void main() {
   runApp(ProviderScope(child: const MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<String> locale = ref.watch(appLocaleProvider);
     return MaterialApp(
       title: 'Flutter web - portfolio exercise',
       localizationsDelegates: [
@@ -34,8 +36,9 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('it'), // Italian
       ],
-      locale: const Locale('en'),
+      locale: Locale(locale.value ?? 'en'),
 
+      // locale: const Locale('en'),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
       ),
