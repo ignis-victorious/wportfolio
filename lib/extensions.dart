@@ -32,6 +32,7 @@ extension StyledContext on BuildContext {
   bool get isMobile => formFactor == FormFactorType.mobile;
   bool get isTablet => formFactor == FormFactorType.tablet;
   bool get isDesktop => formFactor == FormFactorType.desktop;
+  bool get isDesktopOrTablet => isTablet || isDesktop;
 
   AppTextStyle get textStyle {
     switch (formFactor) {
@@ -57,5 +58,4 @@ extension StyledContext on BuildContext {
       AppLocalizations.of(this) ?? lookupAppLocalizations(Locale('en'));
 
   ColorScheme get colorScheme => theme.colorScheme;
-
 }

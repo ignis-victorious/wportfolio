@@ -7,7 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 //  import FILES
 // import 'package:wportfolio/providers.dart';
 // import 'package:wportfolio/style/app_theme.dart';
-import 'home_page.dart';
+import 'features/home/presentation/home_page.dart';
 import 'style/app_theme.dart';
 import 'shared/app_theme_controller.dart';
 import 'shared/app_locale_controller.dart';
