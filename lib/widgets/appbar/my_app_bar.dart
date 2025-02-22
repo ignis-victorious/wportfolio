@@ -1,11 +1,12 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:wportfolio/app_text_styles.dart';
-import 'package:wportfolio/constants/app_menu_list.dart';
 //  import FILES
 import 'package:wportfolio/extensions.dart';
+import '../../app_text_styles.dart';
+import '../../constants/app_menu_list.dart';
 import '../../style/app_size.dart';
+import '../language_switch.dart';
 import 'app_bar_drawer_icon.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -34,7 +35,7 @@ class MyAppBar extends StatelessWidget {
             Spacer(),
             if (context.isDesktop) LargeMenu(),
             Spacer(),
-            LanguageToggle(),
+            LanguageSwitch(),
             // Spacer(),
             ThemeToggle(),
             if (!context.isDesktop) AppBarDrawerIcon(), //Icon(Icons.menu)
@@ -118,21 +119,21 @@ class LargeAppBarMenuItem extends StatelessWidget {
   }
 }
 
-class LanguageToggle extends StatelessWidget {
-  const LanguageToggle({super.key});
+// class LanguageSwitch extends StatelessWidget {
+//   const LanguageSwitch({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return PopupMenuButton(
-      itemBuilder: (context) {
-        return <PopupMenuEntry>[
-          PopupMenuItem(child: const Text('Italian')),
-          PopupMenuItem(child: const Text('Engllish')),
-        ];
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return PopupMenuButton(
+//       itemBuilder: (context) {
+//         return <PopupMenuEntry>[
+//           PopupMenuItem(child: const Text('Italian')),
+//           PopupMenuItem(child: const Text('Engllish')),
+//         ];
+//       },
+//     );
+//   }
+// }
 
 class ThemeToggle extends StatelessWidget {
   const ThemeToggle({super.key});

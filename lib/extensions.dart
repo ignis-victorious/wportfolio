@@ -18,7 +18,7 @@ extension StyledContext on BuildContext {
   double get width => mq.size.width;
   double get height => mq.size.height;
 
-  ThemeData get theme => Theme.of(this); 
+  ThemeData get theme => Theme.of(this);
   FormFactorType get formFactor {
     if (width < 600) {
       return FormFactorType.mobile;
@@ -44,13 +44,18 @@ extension StyledContext on BuildContext {
   }
 
   AppInsets get insets {
-  switch (formFactor) {
-    case FormFactorType.mobile:
-      return SmallInsets();
-    case FormFactorType.tablet:
-    case FormFactorType.desktop:
-      return LargeInsets();
+    switch (formFactor) {
+      case FormFactorType.mobile:
+        return SmallInsets();
+      case FormFactorType.tablet:
+      case FormFactorType.desktop:
+        return LargeInsets();
+    }
   }
-}
-  AppLocalizations get texts => AppLocalizations.of(this)??lookupAppLocalizations(Locale('en')) ;
+
+  AppLocalizations get texts =>
+      AppLocalizations.of(this) ?? lookupAppLocalizations(Locale('en'));
+
+  ColorScheme get ColorScheme => theme.colorScheme;
+
 }

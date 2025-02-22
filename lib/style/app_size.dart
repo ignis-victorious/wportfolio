@@ -12,10 +12,8 @@ abstract class AppInsets {
 }
 
 class Insets {
-
-  static  double get xs => 4;
-  static  double get med => 12;
-  
+  static double get xs => 4;
+  static double get med => 12;
 
   static const double maxWidth = 1280;
 }
