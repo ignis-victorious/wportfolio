@@ -1,34 +1,39 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-//  import FILES
+//  import FILE
 import '../constants/app_icon.dart';
 import '../extensions.dart';
+import '../providers.dart';
 import 'seo_text.dart';
 // PARTS
 // PROVIDERS
 // -------------
 
-class LanguageSwitch extends StatelessWidget {
+class LanguageSwitch extends ConsumerWidget {
   const LanguageSwitch({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    
-    final String? test = Localizations.localeOf(context).languageCode;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final locale = ref.watch(appLocaleProvider);
+    // final String? test = Localizations.localeOf(context).languageCode;
 
     return PopupMenuButton(
       itemBuilder: (context) {
         return <PopupMenuEntry>[
           PopupMenuItem(
+            value: 0,
             child: PopupLanguageSwitchItem(
               language: 'English',
               icon: AppIcon.us,
             ),
           ),
           PopupMenuItem(
+            value: 1,
+
             child: PopupLanguageSwitchItem(
               language: 'Italian',
               icon: AppIcon.it,
@@ -39,12 +44,23 @@ class LanguageSwitch extends StatelessWidget {
           // PopupMenuItem(child: const Text('Engllish')),
         ];
       },
+      initialValue: locale.value == 'en' ? 'En' : 'It',
+      onSelected: (value) {
+        if (value == 0) {
+          ref.read(appLocaleProvider.notifier).changeLocale('en');
+          // context.setLocale(const Locale('en'));
+        } else {
+          ref.read(appLocaleProvider.notifier).changeLocale('it');
+        }
+      },
       child: Row(
         children: <Widget>[
           Icon(Icons.language, color: context.colorScheme.onSurface),
           const Gap(4),
           SEOText(
-            Localizations.localeOf(context).languageCode == 'en' ? 'En' : 'It',
+            locale.value == 'en' ? 'En' : 'It',
+            // test == 'en' ? 'En' : 'It',
+            // Localizations.localeOf(context).languageCode == 'en' ? 'En' : 'It',
           ),
 
           //  SEOText(locale.value=='en'?'En':'It')

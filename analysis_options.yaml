@@ -40,7 +40,6 @@ dart_code_metrics:
           - Debounce
           - Catcher
 
-
 analyzer:
   plugins:
     - custom_lint
