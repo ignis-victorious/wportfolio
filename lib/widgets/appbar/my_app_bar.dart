@@ -10,6 +10,7 @@ import '../../style/app_size.dart';
 import '../language_switch.dart';
 import 'app_bar_drawer_icon.dart';
 import '../../extensions.dart';
+import 'drawer_menu.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // PARTS
@@ -21,29 +22,34 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      alignment: Alignment.center,
-      color: context.theme.appBarTheme.backgroundColor,
-      // color: Colors.red,
-      // color: Theme.of(context).appBarTheme.backgroundColor,
-      height: context.insets.appBarHeight,
-      padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
-      child: ConstrainedBox(
-        constraints: BoxConstraints(maxWidth: Insets.maxWidth),
-        child: Row(
-          children: <Widget>[
-            AppLogo(),
-            Spacer(),
-            if (context.isDesktop) LargeMenu(),
-            Spacer(),
-            LanguageSwitch(),
-            // Spacer(),
-            ThemeToggle(),
-            if (!context.isDesktop) AppBarDrawerIcon(), //Icon(Icons.menu)
-          ],
+    return Column(
+      children: [
+        AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          alignment: Alignment.center,
+          color: context.theme.appBarTheme.backgroundColor,
+          // color: Colors.red,
+          // color: Theme.of(context).appBarTheme.backgroundColor,
+          height: context.insets.appBarHeight,
+          padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: Insets.maxWidth),
+            child: Row(
+              children: <Widget>[
+                AppLogo(),
+                Spacer(),
+                if (context.isDesktop) LargeMenu(),
+                Spacer(),
+                LanguageSwitch(),
+                // Spacer(),
+                ThemeToggle(),
+                if (!context.isDesktop) AppBarDrawerIcon(), //Icon(Icons.menu)
+              ],
+            ),
+          ),
         ),
-      ),
+        if (!context.isDesktop) const DrawerMenu(),
+      ],
     );
   }
 }
@@ -91,6 +97,26 @@ class LargeMenu extends StatelessWidget {
       // Text(AppLocalizations.of(context)!.blog),
       // Text(AppLocalizations.of(context)!.about),
       // ],
+    );
+  }
+}
+
+class SmallMenu extends StatelessWidget {
+  const SmallMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children:
+          AppMenuList.getItems(context)
+              .map(
+                (e) => LargeAppBarMenuItem(
+                  text: e.title,
+                  isSelected: true,
+                  onTap: () {},
+                ),
+              )
+              .toList(),
     );
   }
 }
