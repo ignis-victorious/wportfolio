@@ -3,8 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:wportfolio/constants/app_icon.dart';
 //  import FILES
+import '../constants/app_icon.dart';
+import '../extensions.dart';
 import 'seo_text.dart';
 // PARTS
 // PROVIDERS
@@ -15,6 +16,9 @@ class LanguageSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    final String? test = Localizations.localeOf(context).languageCode;
+
     return PopupMenuButton(
       itemBuilder: (context) {
         return <PopupMenuEntry>[
@@ -37,8 +41,13 @@ class LanguageSwitch extends StatelessWidget {
       },
       child: Row(
         children: <Widget>[
-           Icon(Icons.language, color: context.colorScheme.,)
+          Icon(Icons.language, color: context.colorScheme.onSurface),
+          const Gap(4),
+          SEOText(
+            Localizations.localeOf(context).languageCode == 'en' ? 'En' : 'It',
+          ),
 
+          //  SEOText(locale.value=='en'?'En':'It')
         ],
       ),
     );

@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('it'), // Italian
       ],
-      // locale: Locale('it'),
+      locale: const Locale('en'),
 
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
