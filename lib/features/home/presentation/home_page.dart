@@ -18,7 +18,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // appBar: AppBar(title: const Text('Title'),),
       body: Stack(
-        children: <Widget>[const BackgroundBlur(), HeroWidget(), MyAppBar()],
+        children: <Widget>[
+          const BackgroundBlur(),
+          HeroWidget(),
+          const MyAppBar(),
+        ],
       ),
     );
   }

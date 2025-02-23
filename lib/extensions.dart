@@ -1,9 +1,9 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 //  import FILES
 import 'app_text_styles.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'style/app_size.dart';
 
 // PARTS
@@ -13,12 +13,16 @@ import 'style/app_size.dart';
 enum FormFactorType { mobile, tablet, desktop }
 
 extension StyledContext on BuildContext {
+  //  ---- Retrieves screen sizes: Height and width ----
+  //  this is the key to all this page
   MediaQueryData get mq => MediaQuery.of(this);
 
   double get width => mq.size.width;
   double get height => mq.size.height;
 
+  //  Decides which FormFactor to return
   ThemeData get theme => Theme.of(this);
+
   FormFactorType get formFactor {
     if (width < 600) {
       return FormFactorType.mobile;
@@ -54,8 +58,10 @@ extension StyledContext on BuildContext {
     }
   }
 
+  //  Localisation - Return 'en' if nothing is found
   AppLocalizations get texts =>
       AppLocalizations.of(this) ?? lookupAppLocalizations(Locale('en'));
 
+  //  Returns the app's main theme-colorScheme
   ColorScheme get colorScheme => theme.colorScheme;
 }
