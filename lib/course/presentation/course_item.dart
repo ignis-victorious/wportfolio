@@ -6,6 +6,7 @@ import 'package:seo_renderer/seo_renderer.dart';
 import 'package:wportfolio/extensions.dart';
 
 import '../../widgets/seo_text.dart';
+import '../../widgets/styled_card.dart';
 //  import FILES
 
 // PARTS
@@ -17,7 +18,8 @@ class CourseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return StyledCard(
+      borderRadius: BorderRadius.all(Radius.zero),
       child: AspectRatio(
         aspectRatio: 0.7,
         child: Column(
