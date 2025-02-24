@@ -5,6 +5,7 @@ import 'package:wportfolio/features/home/presentation/experiences_body.dart';
 // import 'package:wportfolio/features/home/presentation/hero_image.dart';
 import 'package:wportfolio/features/home/presentation/hero_widget.dart';
 import 'package:wportfolio/style/app_size.dart';
+import 'package:wportfolio/widgets/appbar/my_footer.dart';
 import 'package:wportfolio/widgets/background_blur.dart';
 //  import FILES
 import '../../../widgets/appbar/my_app_bar.dart';
@@ -37,6 +38,7 @@ class HomePage extends StatelessWidget {
                   SliverToBoxAdapter(child: HomeCourseList()),
                   SliverToBoxAdapter(child: ExperiencesBody()),
                   TestimonyList(),
+                  SliverToBoxAdapter(child: MyFooter()),
                 ],
               ),
             ),
