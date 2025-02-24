@@ -9,6 +9,7 @@ import 'package:wportfolio/widgets/background_blur.dart';
 //  import FILES
 import '../../../widgets/appbar/my_app_bar.dart';
 import 'home_course_list.dart';
+import 'testimony_list.dart';
 // PARTS
 // PROVIDERS
 // -------------
@@ -28,10 +29,15 @@ class HomePage extends StatelessWidget {
             alignment: Alignment.topCenter,
             child: Container(
               constraints: BoxConstraints(maxWidth: Insets.maxWidth),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [HeroWidget(), HomeCourseList(), ExperiencesBody()],
-                ),
+              child: CustomScrollView(
+                // child: SingleChildScrollView(
+                // child: Column(children: [HeroWidget(), HomeCourseList(), ExperiencesBody()]),
+                slivers: [
+                  SliverToBoxAdapter(child: HeroWidget()),
+                  SliverToBoxAdapter(child: HomeCourseList()),
+                  SliverToBoxAdapter(child: ExperiencesBody()),
+                  TestimonyList(),
+                ],
               ),
             ),
           ),
