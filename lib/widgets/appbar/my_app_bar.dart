@@ -87,16 +87,6 @@ class LargeMenu extends StatelessWidget {
                 ),
               )
               .toList(),
-      // children: <Widget>[
-      //   Text(context.texts.home),
-      //   Text(context.texts.courses),
-      //   Text(context.texts.blog),
-      //   Text(context.texts.about),
-      // Text(AppLocalizations.of(context)!.home),
-      // Text(AppLocalizations.of(context)!.courses),
-      // Text(AppLocalizations.of(context)!.blog),
-      // Text(AppLocalizations.of(context)!.about),
-      // ],
     );
   }
 }
@@ -146,22 +136,6 @@ class LargeAppBarMenuItem extends StatelessWidget {
     );
   }
 }
-
-// class LanguageSwitch extends StatelessWidget {
-//   const LanguageSwitch({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return PopupMenuButton(
-//       itemBuilder: (context) {
-//         return <PopupMenuEntry>[
-//           PopupMenuItem(child: const Text('Italian')),
-//           PopupMenuItem(child: const Text('Engllish')),
-//         ];
-//       },
-//     );
-//   }
-// }
 
 class ThemeToggle extends ConsumerWidget {
   const ThemeToggle({super.key});
