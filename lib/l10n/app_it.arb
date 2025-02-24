@@ -26,5 +26,11 @@
     "mobileAppDeveloperDesc":"Con più di 6 anni di esperienza, sviluppo per tutte le piattaforme, sia la parte visibile (frontend) che quella nascosta (backend). Ho anche una grande esperienza nella creazione di applicazioni web SaaS usando Python, SQL, ecc.",
     "@mobileAppDeveloperDesc": {
         "description": "First choiche in the menu in NavBar"
+    },
+    
+    "cooperationRequest":"Cooperazione",
+    "@cooperationRequest": {
+        "description": "First choiche in the menu in NavBar"
     }
+
 }

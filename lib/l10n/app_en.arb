@@ -30,7 +30,12 @@
     "mobileAppDeveloperDesc":"With over 6 years experience I develop for all platforms both the frontend and thebackend. I also posses a vast experience in producing saas web applications using Python, SQL, etc.",
     "@mobileAppDeveloperDesc": {
         "description": "First choiche in the menu in NavBar"
+    },
+    "cooperationRequest":"Cooperation",
+    "@cooperationRequest": {
+        "description": "First choiche in the menu in NavBar"
     }
+
     
    
 }

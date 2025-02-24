@@ -13,6 +13,8 @@ class SEOText extends StatelessWidget {
   final TextStyle? style;
   final TextAlign? textAlign;
   final TextRendererStyle? textRendererStyle;
+  final int? maxLines;
+  final TextOverflow? overflow;
 
   const SEOText(
     this.text, {
@@ -20,10 +22,18 @@ class SEOText extends StatelessWidget {
     this.style,
     this.textAlign,
     this.textRendererStyle,
+    this.maxLines,
+    this.overflow,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Text(text, textAlign: textAlign, style: style);
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: style,
+      maxLines: maxLines,
+      overflow: overflow,
+    );
   }
 }
