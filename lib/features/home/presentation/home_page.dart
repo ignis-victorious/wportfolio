@@ -12,6 +12,7 @@ import 'package:wportfolio/widgets/appbar/my_footer.dart';
 import 'package:wportfolio/widgets/background_blur.dart';
 import 'package:wportfolio/widgets/home_title_subtitle.dart';
 //  import FILES
+import '../../../widgets/appbar/app_scaffold.dart';
 import '../../../widgets/appbar/my_app_bar.dart';
 import 'home_course_list.dart';
 import 'testimony_list.dart';
@@ -24,55 +25,83 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(title: const Text('Title'),),
-      body: Stack(
-        children: <Widget>[
-          const BackgroundBlur(),
-          HeroWidget(),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Container(
-              constraints: const BoxConstraints(maxWidth: Insets.maxWidth),
-              padding: EdgeInsets.only(top: context.insets.appBarHeight),
-              child: CustomScrollView(
-                // child: SingleChildScrollView(
-                // child: Column(children: [HeroWidget(), HomeCourseList(), ExperiencesBody()]),
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: context.insets.padding,
-                      ),
-                      child: HeroWidget(),
-                    ),
-                  ),
-                  SliverGap(context.insets.gap),
-                  SliverToBoxAdapter(child: HomeCourseList()),
-                  SliverGap(context.insets.gap),
-                  SliverToBoxAdapter(child: ExperiencesBody()),
-                  SliverGap(context.insets.gap),
-                  SliverToBoxAdapter(
-                    child: HomeTitleSubtitle(
-                      title: context.texts.testimonies,
-                      subTitle: context.texts.testimoniesDescription,
-                    ),
-                  ),
-                  SliverGap(323),
-                  SliverPadding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: context.insets.padding,
-                    ),
-                    sliver: TestimonyList(),
-                  ),
-                  SliverToBoxAdapter(child: MyFooter()),
-                ],
-              ),
-            ),
+    return AppScaffold(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
+            child: HeroWidget(),
           ),
-          const MyAppBar(),
-        ],
-      ),
+        ),
+        SliverGap(context.insets.gap),
+        SliverToBoxAdapter(child: HomeCourseList()),
+        SliverGap(context.insets.gap),
+        SliverToBoxAdapter(child: ExperiencesBody()),
+        SliverGap(context.insets.gap),
+        SliverToBoxAdapter(
+          child: HomeTitleSubtitle(
+            title: context.texts.testimonies,
+            subTitle: context.texts.testimoniesDescription,
+          ),
+        ),
+        SliverGap(323),
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
+          sliver: TestimonyList(),
+        ),
+      ],
     );
   }
 }
+
+
+// SliverToBoxAdapter(
+//                     child: Padding(
+//                       padding: EdgeInsets.symmetric(
+//                         horizontal: context.insets.padding,
+//                       ),
+//                       child: HeroWidget(),
+//                     ),
+//                   ),
+//                   SliverGap(context.insets.gap),
+//                   SliverToBoxAdapter(child: HomeCourseList()),
+//                   SliverGap(context.insets.gap),
+//                   SliverToBoxAdapter(child: ExperiencesBody()),
+//                   SliverGap(context.insets.gap),
+//                   SliverToBoxAdapter(
+//                     child: HomeTitleSubtitle(
+//                       title: context.texts.testimonies,
+//                       subTitle: context.texts.testimoniesDescription,
+//                     ),
+//                   ),
+//                   SliverGap(323),
+//                   SliverPadding(
+//                     padding: EdgeInsets.symmetric(
+//                       horizontal: context.insets.padding,
+//                     ),
+//                     sliver: TestimonyList(),
+//                   ),
+
+// Stack(
+//         children: <Widget>[
+//           const BackgroundBlur(),
+//           HeroWidget(),
+//           Align(
+//             alignment: Alignment.topCenter,
+//             child: Container(
+//               constraints: const BoxConstraints(maxWidth: Insets.maxWidth),
+//               padding: EdgeInsets.only(top: context.insets.appBarHeight),
+//               child: CustomScrollView(
+//                 // child: SingleChildScrollView(
+//                 // child: Column(children: [HeroWidget(), HomeCourseList(), ExperiencesBody()]),
+//                 slivers: [
+                  
+
+//                   SliverToBoxAdapter(child: MyFooter()),
+//                 ],
+//               ),
+//             ),
+//           ),
+//           const MyAppBar(),
+//         ],
+//       )

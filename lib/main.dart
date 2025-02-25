@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 // import 'package:wportfolio/providers.dart';
 // import 'package:wportfolio/style/app_theme.dart';
 import 'features/home/presentation/home_page.dart';
+import 'routes/app_routes.dart';
 import 'style/app_theme.dart';
 import 'shared/app_theme_controller.dart';
 import 'shared/app_locale_controller.dart';
@@ -27,7 +28,7 @@ class MyApp extends ConsumerWidget {
     final AsyncValue<String> locale = ref.watch(appLocaleControllerProvider);
     final theme = ref.watch(appThemeControllerProvider);
 
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter web - portfolio exercise',
       localizationsDelegates: [
         AppLocalizations.delegate, // Add this line
@@ -46,7 +47,8 @@ class MyApp extends ConsumerWidget {
         Locale('it'), // Italian
       ],
       locale: Locale(locale.value ?? 'en'),
-      home: const HomePage(),
+      routerConfig: AppRoute.router,
+      // home: const HomePage(),
 
       // locale: const Locale('en'),
       // theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),),
@@ -62,7 +64,6 @@ class MyApp extends ConsumerWidget {
 // -------------
 //  import LIBRARIES
 //  import FILES
-
 // PARTS
 // PROVIDERS
 // -------------

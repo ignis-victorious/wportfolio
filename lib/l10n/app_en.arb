@@ -54,7 +54,17 @@
     "testimoniesDescription":"Trstimonies description for all my hard. hard work",
     "@testimoniesDescription": {
         "description": "Esperience di lavoro"
+    },
+    "aboutTitle":"About title",
+    "@aboutTitle": {
+        "description": "Esperience"
+    },
+    "aboutDescription":"aboutDescription",
+    "@aboutDescription": {
+        "description": "Esperience di lavoro"
     }
+
+
 
     
    

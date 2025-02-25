@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 //  import FILES
 import 'package:wportfolio/extensions.dart';
 import 'package:wportfolio/widgets/home_title_subtitle.dart';
-import '../../../course/presentation/course_item.dart';
+import '../../course/presentation/course_item.dart';
 // PARTS
 // PROVIDERS
 // -------------

@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 import 'package:seo_renderer/seo_renderer.dart';
 import 'package:wportfolio/extensions.dart';
 
-import '../../widgets/seo_text.dart';
-import '../../widgets/styled_card.dart';
+import '../../../widgets/seo_text.dart';
+import '../../../widgets/styled_card.dart';
 //  import FILES
 
 // PARTS

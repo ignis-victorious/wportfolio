@@ -51,6 +51,14 @@
     "testimoniesDescription":"Descrizione delle testimonianze del mio lavoro",
     "@testimoniesDescription": {
         "description": "Esperience di lavoro"
+    },
+    "aboutTitle":"About title",
+    "@aboutTitle": {
+        "description": "All about"
+    },
+    "aboutDescription":"Descrizione di About",
+    "@aboutDescription": {
+        "description": "Descrizione di About"
     }
 
 }
