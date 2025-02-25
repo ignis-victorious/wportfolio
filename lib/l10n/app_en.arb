@@ -39,13 +39,21 @@
     "@poweredByFlutter": {
         "description": "First choiche in the menu in NavBar"
     },
-    "experiences":"compoetenze",
+    "experiences":"Experiences",
     "@experiences": {
         "description": "Esperience"
     },
-    "experiencesDescription":"Descrizione di tutte le competenze accumulte in anni di esperienza sul campo",
+    "experiencesDescription":"Experience description for all my work",
     "@experiencesDescription": {
-        "description": "Esperience di lavor"
+        "description": "Esperience di lavoro"
+    },
+    "testimonies":"Testimonies",
+    "@testimonies": {
+        "description": "Esperience"
+    },
+    "testimoniesDescription":"Trstimonies description for all my hard. hard work",
+    "@testimoniesDescription": {
+        "description": "Esperience di lavoro"
     }
 
     

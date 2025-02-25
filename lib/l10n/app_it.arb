@@ -35,6 +35,22 @@
     "poweredByFlutter":"Powered by Flutter",
     "@poweredByFlutter": {
         "description": "First choiche in the menu in NavBar"
+    },
+    "experiences":"competenze",
+    "@experiences": {
+        "description": "Esperience"
+    },
+    "experiencesDescription":"Descrizione di tutte le competenze accumulte in anni di esperienza sul campo",
+    "@experiencesDescription": {
+        "description": "Esperience di lavoro"
+    },
+    "testimonies":"Testimonianze",
+    "@testimonies": {
+        "description": "Testimoniaaaaanzeeee"
+    },
+    "testimoniesDescription":"Descrizione delle testimonianze del mio lavoro",
+    "@testimoniesDescription": {
+        "description": "Esperience di lavoro"
     }
 
 }

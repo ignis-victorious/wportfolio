@@ -197,7 +197,7 @@ class ExperienceItem extends StatelessWidget {
     return StyledCard(
       width: expWidth,
       height: expHeight,
-      borderRadius: BorderRadius.all(Radius.zero),
+      borderEffect: true,
       child: Column(
         children: [
           Text(
@@ -224,7 +224,7 @@ class ExperienceItem extends StatelessWidget {
 }
 
 class _ExperinceDescriptionItem extends StatelessWidget {
-  const _ExperinceDescriptionItem({super.key});
+  const _ExperinceDescriptionItem();
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:wportfolio/extensions.dart';
 import 'package:wportfolio/features/home/presentation/experiences_body.dart';
@@ -9,6 +10,7 @@ import 'package:wportfolio/features/home/presentation/hero_widget.dart';
 import 'package:wportfolio/style/app_size.dart';
 import 'package:wportfolio/widgets/appbar/my_footer.dart';
 import 'package:wportfolio/widgets/background_blur.dart';
+import 'package:wportfolio/widgets/home_title_subtitle.dart';
 //  import FILES
 import '../../../widgets/appbar/my_app_bar.dart';
 import 'home_course_list.dart';
@@ -49,7 +51,20 @@ class HomePage extends StatelessWidget {
                   SliverToBoxAdapter(child: HomeCourseList()),
                   SliverGap(context.insets.gap),
                   SliverToBoxAdapter(child: ExperiencesBody()),
-                  TestimonyList(),
+                  SliverGap(context.insets.gap),
+                  SliverToBoxAdapter(
+                    child: HomeTitleSubtitle(
+                      title: context.texts.testimonies,
+                      subTitle: context.texts.testimoniesDescription,
+                    ),
+                  ),
+                  SliverGap(323),
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.insets.padding,
+                    ),
+                    sliver: TestimonyList(),
+                  ),
                   SliverToBoxAdapter(child: MyFooter()),
                 ],
               ),

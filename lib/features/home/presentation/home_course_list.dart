@@ -30,7 +30,7 @@ class HomeCourseList extends StatelessWidget {
 }
 
 class _HomeCourseListDesktop extends StatelessWidget {
-  const _HomeCourseListDesktop({super.key});
+  const _HomeCourseListDesktop();
 
   @override
   Widget build(BuildContext context) {
