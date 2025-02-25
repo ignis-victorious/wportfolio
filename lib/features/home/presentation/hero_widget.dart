@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 //  import FILES
 import 'package:wportfolio/extensions.dart';
 import '../../../style/app_size.dart';
+import '../../../widgets/powered_by_flutter.dart';
 import 'hero_buttons.dart';
 import '../../../features/home/presentation/hero_text.dart';
 import 'hero_image.dart';
@@ -20,8 +21,11 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        const Text('Fluttter'),
-        context.isDesktop || context.isTablet ? _LargeHero() : _SmallHero(),
+        const PoweredByFlutter(),
+        // const Text('Fluttter'),
+        context.isDesktop || context.isTablet
+            ? const _LargeHero()
+            : const _SmallHero(),
       ],
     );
   }

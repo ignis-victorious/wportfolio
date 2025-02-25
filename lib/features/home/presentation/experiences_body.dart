@@ -7,6 +7,8 @@ import 'package:gap/gap.dart';
 import 'package:wportfolio/extensions.dart';
 import 'package:wportfolio/widgets/styled_card.dart';
 
+import '../../../widgets/home_title_subtitle.dart';
+
 // PARTS
 // PROVIDERS
 // -------------
@@ -21,7 +23,17 @@ class ExperiencesBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DesktopExperiencesBody();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        HomeTitleSubtitle(
+          title: context.texts.experiences,
+          subTitle: context.texts.experiencesDescription,
+        ), // HomeTitleSubtitle
+        const Gap(32),
+        context.isDesktop ? DesktopExperiencesBody() : PhoneExperiencesBody(),
+      ],
+    );
   }
 }
 
@@ -114,6 +126,60 @@ class DesktopExperiencesBody extends StatelessWidget {
               ), // Container
             ),
           ],
+        ],
+      ),
+    );
+  }
+}
+
+class PhoneExperiencesBody extends StatelessWidget {
+  const PhoneExperiencesBody({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
+          ExperienceItem(),
+          SizedBox(
+            height: 60,
+            child: DottedLine(
+              dashColor: Colors.white,
+              direction: Axis.vertical,
+            ),
+          ),
         ],
       ),
     );

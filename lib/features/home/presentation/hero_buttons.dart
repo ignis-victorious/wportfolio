@@ -1,7 +1,6 @@
 // -------------
 //  import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:wportfolio/extensions.dart';
 //  import FILES
@@ -24,10 +23,6 @@ class LargeHeroButtons extends StatelessWidget {
       ],
     );
   }
-}
-
-extension on AppLocalizations {
-  get cooperationRequest => null;
 }
 
 class SmallHeroButtons extends StatelessWidget {

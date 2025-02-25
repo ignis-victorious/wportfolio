@@ -31,6 +31,10 @@
     "cooperationRequest":"Cooperazione",
     "@cooperationRequest": {
         "description": "First choiche in the menu in NavBar"
+    },
+    "poweredByFlutter":"Powered by Flutter",
+    "@poweredByFlutter": {
+        "description": "First choiche in the menu in NavBar"
     }
 
 }

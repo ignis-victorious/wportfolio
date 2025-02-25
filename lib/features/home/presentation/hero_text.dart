@@ -13,17 +13,17 @@ import 'package:wportfolio/extensions.dart';
 // PROVIDERS
 // -------------
 
-extension on AppLocalizations {
-  get mahdimirzadeh => null;
-}
+// extension on AppLocalizations {
+//   get mahdimirzadeh => null;
+// }
 
-extension on AppLocalizations {
-  get mobileAppDeveloper => null;
-}
+// extension on AppLocalizations {
+//   get mobileAppDeveloper => null;
+// }
 
-extension on AppLocalizations {
-  get mobileAppDeveloperDesc => null;
-}
+// extension on AppLocalizations {
+//   get mobileAppDeveloperDesc => null;
+// }
 
 class HeroText extends StatelessWidget {
   const HeroText({super.key});

@@ -14,6 +14,7 @@ class StyledCard extends StatefulWidget {
   final EdgeInsets? padding;
   final BorderRadius borderRadius;
   final Widget child;
+  final bool borderEffect;
 
   const StyledCard({
     super.key,
@@ -22,6 +23,7 @@ class StyledCard extends StatefulWidget {
     this.padding,
     required this.borderRadius,
     required this.child,
+    this.borderEffect = false,
   });
 
   @override

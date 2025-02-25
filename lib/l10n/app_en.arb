@@ -34,6 +34,18 @@
     "cooperationRequest":"Cooperation",
     "@cooperationRequest": {
         "description": "First choiche in the menu in NavBar"
+    },
+    "poweredByFlutter":"Powered by Flutter",
+    "@poweredByFlutter": {
+        "description": "First choiche in the menu in NavBar"
+    },
+    "experiences":"compoetenze",
+    "@experiences": {
+        "description": "Esperience"
+    },
+    "experiencesDescription":"Descrizione di tutte le competenze accumulte in anni di esperienza sul campo",
+    "@experiencesDescription": {
+        "description": "Esperience di lavor"
     }
 
     
